@@ -188,9 +188,9 @@ console.log( 'The total number of cash sales is:', numCashSales );  // 4
   HINT(S):
   - Make sure to exclude any 'sales' made by 'credit'!
 */
-// const numCreditPurchases;
+const numCreditPurchases = transactions.filter(transaction => transaction['paymentMethod'] == 'credit').length;
 
-// console.log( 'The total number of credit purchases is:', numCreditPurchases );
+console.log( 'The total number of credit purchases is:', numCreditPurchases );  // 6
 
 
 // --------------------------------------------------
