@@ -376,6 +376,7 @@ console.log( '\nThe net profit is:', netProfit );  // 995.657
   - The result of this calculation should be a number (not an array, object, or other data type).
 */
 
+
 /*
 Iterates through the transactions array...
 ...uses forEach to run through each transaction.
@@ -386,7 +387,7 @@ If the transaction.items.length is larger than the biggest one stored...
 let mostItems = 0;
 transactions.forEach((transaction) => {
   if (transaction.items.length > mostItems) {
-    mostItems = transaction.items.length
+    mostItems = transaction.items.length;
   }
 })
 
@@ -399,6 +400,35 @@ console.log( '\nThe most items sold in a single transaction is:', mostItems );  
 /*
   Calculate the sum of the 'purchase' with the fewest items.
 */
-// const sumOfSmallestPurchase;
 
-// console.log( '\nThe sum of the smallest purchase is:', sumOfSmallestPurchase );
+
+/*
+Iterates through the transactions array...
+...uses forEach to run through each transaction.
+If the transaction.items.length is smaller than the smallest one stored...
+...or the current value is 0...
+...fewestItems takes the current length as it's value.
+*/
+
+let fewestItems = 0;
+let smallestOrder = [];
+transactions.forEach((transaction) => {
+  if ((transaction.items.length < fewestItems) || (fewestItems == 0)) {
+    fewestItems = transaction.items.length;
+    smallestOrder = transaction;
+  }
+})
+// console.log(fewestItems)
+// console.log(smallestOrder)
+
+/*
+Uses forEach to iterates through each item in the smallestOrder array...
+...Adds the item.price to sumOfSmallestPurchase, until it reaches the total amount.
+*/
+
+let sumOfSmallestPurchase = 0;
+smallestOrder.items.forEach((item) => {
+  sumOfSmallestPurchase += item.price;
+})
+
+console.log( '\nThe sum of the smallest purchase is:', sumOfSmallestPurchase );  // 1024
