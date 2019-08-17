@@ -331,7 +331,7 @@ const allPurchases = transactions.filter(transaction => transaction.type == 'pur
   })
 })
 
-console.log( '\nThe sum of all purchases is:', sumPurchases.toFixed(3) ); // Rounds to 3 decimal places. Returns -33.200
+console.log( '\nThe sum of all purchases is:', sumPurchases.toFixed(3) );  // Rounds to 3 decimal places. Returns -33.200
 
 
 // --------------------------------------------------
@@ -357,13 +357,13 @@ Iterates through this transaction array...
 Uses netProfit to find the total value of all item prices.
 */
 let netProfit = 0;
-const allTransactions = transactions.forEach((transaction) => {
+transactions.forEach((transaction) => {
   transaction.items.forEach((item) => {
     netProfit += item.price;
   })
 })
 
-console.log( '\nThe net profit is:', netProfit ); // 995.657
+console.log( '\nThe net profit is:', netProfit );  // 995.657
 
 
 // --------------------------------------------------
@@ -375,9 +375,22 @@ console.log( '\nThe net profit is:', netProfit ); // 995.657
   HINTS:
   - The result of this calculation should be a number (not an array, object, or other data type).
 */
-// const mostItems;
 
-// console.log( '\nThe most items sold in a single transaction is:', mostItems );
+/*
+Iterates through the transactions array...
+...uses forEach to run through each transaction.
+If the transaction.items.length is larger than the biggest one stored...
+...mostItems takes the current length as it's value.
+*/
+
+let mostItems = 0;
+transactions.forEach((transaction) => {
+  if (transaction.items.length > mostItems) {
+    mostItems = transaction.items.length
+  }
+})
+
+console.log( '\nThe most items sold in a single transaction is:', mostItems );  // 8
 
 
 // --------------------------------------------------
