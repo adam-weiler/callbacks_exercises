@@ -130,7 +130,7 @@ console.log( 'The total number of transactions is:', totalTransactions );
   HINT(S):
   - Not all transactions are 'sales'.
 */
-const numSales;
+const numSales = transactions.filter(transaction => transaction['type'] == 'sale').length;
 
 /*
   Hey, welcome to the first question!
@@ -160,9 +160,9 @@ console.log( 'The total number of sales is:', numSales );
 /*
   Calculate the total number of 'purchases'.
 */
-const numPurchases;
+// const numPurchases;
 
-console.log( 'The total number of purchases is:', numPurchases );
+// console.log( 'The total number of purchases is:', numPurchases );
 
 
 // --------------------------------------------------
@@ -174,9 +174,9 @@ console.log( 'The total number of purchases is:', numPurchases );
   HINT(S):
   - Don't forget that 'purchases' can also be made in 'cash'!
 */
-const numCashSales;
+// const numCashSales;
 
-console.log( 'The total number of cash sales is:', numCashSales );
+// console.log( 'The total number of cash sales is:', numCashSales );
 
 
 // --------------------------------------------------
@@ -188,9 +188,9 @@ console.log( 'The total number of cash sales is:', numCashSales );
   HINT(S):
   - Make sure to exclude any 'sales' made by 'credit'!
 */
-const numCreditPurchases;
+// const numCreditPurchases;
 
-console.log( 'The total number of credit purchases is:', numCreditPurchases );
+// console.log( 'The total number of credit purchases is:', numCreditPurchases );
 
 
 // --------------------------------------------------
@@ -205,9 +205,9 @@ console.log( 'The total number of credit purchases is:', numCreditPurchases );
   - The assembled array should be made up of strings, not full `transaction` objects.
   - This array is allowed to contain duplicate values.
 */
-const allVendors;
+// const allVendors;
 
-console.log( 'The vendors are:', allVendors );
+// console.log( 'The vendors are:', allVendors );
 
 
 // --------------------------------------------------
@@ -222,9 +222,9 @@ console.log( 'The vendors are:', allVendors );
   - The assembled array should be made up of strings, not full `transaction` objects.
   - Make sure that the resulting array *does not* include any duplicates.
 */
-const uniqueCustomers;
+// const uniqueCustomers;
 
-console.log( 'The unique customers are:', uniqueCustomers );
+// console.log( 'The unique customers are:', uniqueCustomers );
 
 
 // --------------------------------------------------
@@ -240,9 +240,9 @@ console.log( 'The unique customers are:', uniqueCustomers );
   - There may be more than 1 'sale' that includes 5 or more items.
   - Individual transactions do not have either `name` or `numItems` properties, we'll have to add them to the output.
 */
-const bigSpenders;
+// const bigSpenders;
 
-console.log( 'The "big spenders" are:', bigSpenders );
+// console.log( 'The "big spenders" are:', bigSpenders );
 
 
 // --------------------------------------------------
@@ -254,9 +254,9 @@ console.log( 'The "big spenders" are:', bigSpenders );
   HINT(S):
   - Transactions don't have 'prices', but their 'items' do!
 */
-const sumFirstSale;
+// const sumFirstSale;
 
-console.log( 'The sum of the first sale items is:', sumFirstSale );
+// console.log( 'The sum of the first sale items is:', sumFirstSale );
 
 
 // --------------------------------------------------
@@ -270,9 +270,9 @@ console.log( 'The sum of the first sale items is:', sumFirstSale );
   - Make sure to include 'price' information from *all* purchases.
 */
 
-const sumPurchases;
+// const sumPurchases;
 
-console.log( 'The sum of all purchases is:', sumPurchases );
+// console.log( 'The sum of all purchases is:', sumPurchases );
 
 
 // --------------------------------------------------
@@ -288,9 +288,9 @@ console.log( 'The sum of all purchases is:', sumPurchases );
   HINT(S):
   - Unlike 'QUESTION 08' and 'QUESTION 09', here we're interested in both 'sale' and 'purchase' transactions.
 */
-const netProfit;
+// const netProfit;
 
-console.log( 'The net profit is:', netProfit );
+// console.log( 'The net profit is:', netProfit );
 
 
 // --------------------------------------------------
@@ -302,9 +302,9 @@ console.log( 'The net profit is:', netProfit );
   HINTS:
   - The result of this calculation should be a number (not an array, object, or other data type).
 */
-const mostItems;
+// const mostItems;
 
-console.log( 'The most items sold in a single transaction is:', mostItems );
+// console.log( 'The most items sold in a single transaction is:', mostItems );
 
 
 // --------------------------------------------------
@@ -313,6 +313,6 @@ console.log( 'The most items sold in a single transaction is:', mostItems );
 /*
   Calculate the sum of the 'purchase' with the fewest items.
 */
-const sumOfSmallestPurchase;
+// const sumOfSmallestPurchase;
 
-console.log( 'The sum of the smallest purchase is:', sumOfSmallestPurchase );
+// console.log( 'The sum of the smallest purchase is:', sumOfSmallestPurchase );
