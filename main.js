@@ -229,9 +229,31 @@ console.log( 'The vendors are:', allVendors );
   - The assembled array should be made up of strings, not full `transaction` objects.
   - Make sure that the resulting array *does not* include any duplicates.
 */
-// const uniqueCustomers;
+// const uniqueCustomers = transactions.filter((value, index, self) => self.indexOf(value)['vendor']);
 
-// console.log( 'The unique customers are:', uniqueCustomers );
+// const uniqueCustomers = [...new Set(transactions)]
+
+// const uniqueCustomers = transactions.filter(function (transaction) { return transaction.vendor });
+
+// let uniqueCustomers = transactions.reduce(function (transaction, vendor) {
+//   if (transaction.vendor) {
+//     return transaction.concat(vendor);
+//   } else {
+//     return transaction
+//   }
+// }, []);
+
+let uniqueCustomers = [];
+
+transactions.forEach(function(transaction){ 
+  if (transaction['vendor']) {
+    uniqueCustomers.push(transaction['vendor']);
+  }
+})
+
+uniqueCustomers = [...new Set(uniqueCustomers)];
+
+console.log( 'The unique customers are:', uniqueCustomers );
 
 
 // --------------------------------------------------
