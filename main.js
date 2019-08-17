@@ -253,7 +253,7 @@ transactions.forEach(function(transaction){
 
 uniqueCustomers = [...new Set(uniqueCustomers)];
 
-console.log( '\nThe unique customers are:', uniqueCustomers );
+console.log( '\nThe unique customers are:', uniqueCustomers );  // [ "Dick's Doodads", 'Gibson Gadgets', 'Clarke Computing' ]
 
 
 // --------------------------------------------------
@@ -271,7 +271,7 @@ console.log( '\nThe unique customers are:', uniqueCustomers );
 */
 const bigSpenders = transactions.filter(transaction => transaction['items'].length >= 5);
 
-console.log( '\nThe "big spenders" are:', bigSpenders );
+console.log( '\nThe "big spenders" are:', bigSpenders );  // Returns a list of 3 transactions.
 
 
 // --------------------------------------------------
@@ -283,9 +283,24 @@ console.log( '\nThe "big spenders" are:', bigSpenders );
   HINT(S):
   - Transactions don't have 'prices', but their 'items' do!
 */
-// const sumFirstSale;
+// const sumFirstSale = transactions.find(function (transaction) {
+//   return transaction.type == 'credit';
+// });
 
-// console.log( '\nThe sum of the first sale items is:', sumFirstSale );
+
+/*
+Iterates through the transactions array...
+...uses filter to find each transaction.type of 'sale'.
+Takes the *first* 'sale' transaction from this list...
+...Takes the items from this array.
+Iterates through this array...
+...uses reduce to calculate the price value of each item.
+*/
+let sumFirstSale = transactions.filter(transaction => transaction.type == 'sale')[0].items.reduce(
+  (accumulator, currentValue) => accumulator.price + currentValue.price
+)
+
+console.log( '\nThe sum of the first sale items is:', sumFirstSale );  // 1.125
 
 
 // --------------------------------------------------
