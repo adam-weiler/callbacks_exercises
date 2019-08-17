@@ -296,7 +296,7 @@ Takes the *first* 'sale' transaction from this list...
 Iterates through this array...
 ...uses reduce to calculate the price value of each item.
 */
-let sumFirstSale = transactions.filter(transaction => transaction.type == 'sale')[0].items.reduce(
+const sumFirstSale = transactions.filter(transaction => transaction.type == 'sale')[0].items.reduce(
   (accumulator, currentValue) => accumulator.price + currentValue.price
 )
 
@@ -314,9 +314,24 @@ console.log( '\nThe sum of the first sale items is:', sumFirstSale );  // 1.125
   - Make sure to include 'price' information from *all* purchases.
 */
 
-// const sumPurchases;
 
-// console.log( '\nThe sum of all purchases is:', sumPurchases );
+/*
+Iterates through the transactions array...
+...uses filter to find each transaction.type of 'purchase'.
+Iterates through this array...
+...uses forEach to run through each transaction.
+Iterates through this array...
+...uses forEach to run through each item in transaction.
+Uses sumPurchases to find the total value of all item prices.
+*/
+let sumPurchases = 0;
+const allPurchases = transactions.filter(transaction => transaction.type == 'purchase').forEach((transaction) => {
+  transaction.items.forEach((item) => {
+    sumPurchases += item.price;
+  })
+})
+
+console.log( '\nThe sum of all purchases is:', sumPurchases.toFixed(3) ); // Rounds to 3 decimal places. Returns -33.200
 
 
 // --------------------------------------------------
