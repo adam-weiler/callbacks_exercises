@@ -151,7 +151,7 @@ const numSales = transactions.filter(transaction => transaction['type'] == 'sale
   The breakdown above takes up a lot of space, feel free to move it to the top or bottom of the file!
 */
 
-console.log( 'The total number of sales is:', numSales );
+console.log( 'The total number of sales is:', numSales );  // 5
 
 
 // --------------------------------------------------
@@ -162,7 +162,7 @@ console.log( 'The total number of sales is:', numSales );
 */
 const numPurchases = transactions.filter(transaction => transaction['type'] == 'purchase').length;
 
-console.log( 'The total number of purchases is:', numPurchases );
+console.log( 'The total number of purchases is:', numPurchases );  // 5
 
 
 // --------------------------------------------------
@@ -174,9 +174,9 @@ console.log( 'The total number of purchases is:', numPurchases );
   HINT(S):
   - Don't forget that 'purchases' can also be made in 'cash'!
 */
-// const numCashSales;
+const numCashSales = transactions.filter(transaction => transaction['paymentMethod'] == 'cash').length;
 
-// console.log( 'The total number of cash sales is:', numCashSales );
+console.log( 'The total number of cash sales is:', numCashSales );  // 4
 
 
 // --------------------------------------------------
