@@ -118,7 +118,7 @@ const transactions = [
 */
 const totalTransactions = transactions.length;
 
-console.log( 'The total number of transactions is:', totalTransactions );
+console.log( '\nThe total number of transactions is:', totalTransactions );
 
 
 // --------------------------------------------------
@@ -151,7 +151,7 @@ const numSales = transactions.filter(transaction => transaction['type'] == 'sale
   The breakdown above takes up a lot of space, feel free to move it to the top or bottom of the file!
 */
 
-console.log( 'The total number of sales is:', numSales );  // 5
+console.log( '\nThe total number of sales is:', numSales );  // 5
 
 
 // --------------------------------------------------
@@ -162,7 +162,7 @@ console.log( 'The total number of sales is:', numSales );  // 5
 */
 const numPurchases = transactions.filter(transaction => transaction['type'] == 'purchase').length;
 
-console.log( 'The total number of purchases is:', numPurchases );  // 5
+console.log( '\nThe total number of purchases is:', numPurchases );  // 5
 
 
 // --------------------------------------------------
@@ -176,7 +176,7 @@ console.log( 'The total number of purchases is:', numPurchases );  // 5
 */
 const numCashSales = transactions.filter(transaction => transaction['paymentMethod'] == 'cash').length;
 
-console.log( 'The total number of cash sales is:', numCashSales );  // 4
+console.log( '\nThe total number of cash sales is:', numCashSales );  // 4
 
 
 // --------------------------------------------------
@@ -190,7 +190,7 @@ console.log( 'The total number of cash sales is:', numCashSales );  // 4
 */
 const numCreditPurchases = transactions.filter(transaction => transaction['paymentMethod'] == 'credit').length;
 
-console.log( 'The total number of credit purchases is:', numCreditPurchases );  // 6
+console.log( '\nThe total number of credit purchases is:', numCreditPurchases );  // 6
 
 
 // --------------------------------------------------
@@ -214,7 +214,7 @@ transactions.forEach(function(transaction){
   }
 })
 
-console.log( 'The vendors are:', allVendors );
+console.log( '\nThe vendors are:', allVendors );
 
 
 // --------------------------------------------------
@@ -253,7 +253,7 @@ transactions.forEach(function(transaction){
 
 uniqueCustomers = [...new Set(uniqueCustomers)];
 
-console.log( 'The unique customers are:', uniqueCustomers );
+console.log( '\nThe unique customers are:', uniqueCustomers );
 
 
 // --------------------------------------------------
@@ -267,11 +267,11 @@ console.log( 'The unique customers are:', uniqueCustomers );
 
   HINT(S):
   - There may be more than 1 'sale' that includes 5 or more items.
-  - Individual transactions do not have either `name` or `numItems` properties, we'll have to add them to the output.
+  - Individual transactions do not have `name` properties, we'll have to add them to the output. (Huh?)
 */
-// const bigSpenders;
+const bigSpenders = transactions.filter(transaction => transaction['items'].length >= 5);
 
-// console.log( 'The "big spenders" are:', bigSpenders );
+console.log( '\nThe "big spenders" are:', bigSpenders );
 
 
 // --------------------------------------------------
@@ -285,7 +285,7 @@ console.log( 'The unique customers are:', uniqueCustomers );
 */
 // const sumFirstSale;
 
-// console.log( 'The sum of the first sale items is:', sumFirstSale );
+// console.log( '\nThe sum of the first sale items is:', sumFirstSale );
 
 
 // --------------------------------------------------
@@ -301,7 +301,7 @@ console.log( 'The unique customers are:', uniqueCustomers );
 
 // const sumPurchases;
 
-// console.log( 'The sum of all purchases is:', sumPurchases );
+// console.log( '\nThe sum of all purchases is:', sumPurchases );
 
 
 // --------------------------------------------------
@@ -319,7 +319,7 @@ console.log( 'The unique customers are:', uniqueCustomers );
 */
 // const netProfit;
 
-// console.log( 'The net profit is:', netProfit );
+// console.log( '\nThe net profit is:', netProfit );
 
 
 // --------------------------------------------------
@@ -333,7 +333,7 @@ console.log( 'The unique customers are:', uniqueCustomers );
 */
 // const mostItems;
 
-// console.log( 'The most items sold in a single transaction is:', mostItems );
+// console.log( '\nThe most items sold in a single transaction is:', mostItems );
 
 
 // --------------------------------------------------
@@ -344,4 +344,4 @@ console.log( 'The unique customers are:', uniqueCustomers );
 */
 // const sumOfSmallestPurchase;
 
-// console.log( 'The sum of the smallest purchase is:', sumOfSmallestPurchase );
+// console.log( '\nThe sum of the smallest purchase is:', sumOfSmallestPurchase );
