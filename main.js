@@ -118,7 +118,7 @@ const transactions = [
 */
 const totalTransactions = transactions.length;
 
-console.log( '\nThe total number of transactions is:', totalTransactions );
+console.log( '\nThe total number of transactions is:', totalTransactions );  // 10
 
 
 // --------------------------------------------------
@@ -174,9 +174,9 @@ console.log( '\nThe total number of purchases is:', numPurchases );  // 5
   HINT(S):
   - Don't forget that 'purchases' can also be made in 'cash'!
 */
-const numCashSales = transactions.filter(transaction => transaction['paymentMethod'] == 'cash').length;
+const numCashSales = transactions.filter(transaction => transaction['type'] == 'sale').filter(transaction => transaction['paymentMethod'] == 'cash').length;
 
-console.log( '\nThe total number of cash sales is:', numCashSales );  // 4
+console.log( '\nThe total number of cash sales is:', numCashSales );  // 2
 
 
 // --------------------------------------------------
@@ -188,9 +188,9 @@ console.log( '\nThe total number of cash sales is:', numCashSales );  // 4
   HINT(S):
   - Make sure to exclude any 'sales' made by 'credit'!
 */
-const numCreditPurchases = transactions.filter(transaction => transaction['paymentMethod'] == 'credit').length;
+const numCreditPurchases = transactions.filter(transaction => transaction['type'] == 'purchase').filter(transaction => transaction['paymentMethod'] == 'credit').length;
 
-console.log( '\nThe total number of credit purchases is:', numCreditPurchases );  // 6
+console.log( '\nThe total number of credit purchases is:', numCreditPurchases );  // 3
 
 
 // --------------------------------------------------
@@ -251,7 +251,7 @@ transactions.forEach(function(transaction){
   }
 })
 
-uniqueCustomers = [...new Set(uniqueCustomers)];
+uniqueCustomers = [...new Set(uniqueCustomers)];  // Removes duplicates from the array.
 
 console.log( '\nThe unique customers are:', uniqueCustomers );  // [ "Dick's Doodads", 'Gibson Gadgets', 'Clarke Computing' ]
 
@@ -269,9 +269,9 @@ console.log( '\nThe unique customers are:', uniqueCustomers );  // [ "Dick's Doo
   - There may be more than 1 'sale' that includes 5 or more items.
   - Individual transactions do not have `name` properties, we'll have to add them to the output. (Huh?)
 */
-const bigSpenders = transactions.filter(transaction => transaction['items'].length >= 5);
+const bigSpenders = transactions.filter(transaction => transaction['type'] == 'sale').filter(transaction => transaction['items'].length >= 5);
 
-console.log( '\nThe "big spenders" are:', bigSpenders );  // Returns a list of 3 transactions.
+console.log( '\nThe "big spenders" are:', bigSpenders );  // Returns a list of 2 transactions.
 
 
 // --------------------------------------------------
