@@ -293,7 +293,7 @@ Iterates through the transactions array...
 ...uses filter to find each transaction.type of 'sale'.
 Takes the *first* 'sale' transaction from this list...
 ...Takes the items from this array.
-Iterates through this array...
+Iterates through this items array...
 ...uses reduce to calculate the price value of each item.
 */
 const sumFirstSale = transactions.filter(transaction => transaction.type == 'sale')[0].items.reduce(
@@ -318,9 +318,9 @@ console.log( '\nThe sum of the first sale items is:', sumFirstSale );  // 1.125
 /*
 Iterates through the transactions array...
 ...uses filter to find each transaction.type of 'purchase'.
-Iterates through this array...
+Iterates through this transaction array...
 ...uses forEach to run through each transaction.
-Iterates through this array...
+Iterates through this item array...
 ...uses forEach to run through each item in transaction.
 Uses sumPurchases to find the total value of all item prices.
 */
@@ -347,9 +347,23 @@ console.log( '\nThe sum of all purchases is:', sumPurchases.toFixed(3) ); // Rou
   HINT(S):
   - Unlike 'QUESTION 08' and 'QUESTION 09', here we're interested in both 'sale' and 'purchase' transactions.
 */
-// const netProfit;
 
-// console.log( '\nThe net profit is:', netProfit );
+
+/*
+Iterates through the transactions array...
+...uses forEach to run through each transaction.
+Iterates through this transaction array...
+...uses forEach to run through each item in transaction.
+Uses netProfit to find the total value of all item prices.
+*/
+let netProfit = 0;
+const allTransactions = transactions.forEach((transaction) => {
+  transaction.items.forEach((item) => {
+    netProfit += item.price;
+  })
+})
+
+console.log( '\nThe net profit is:', netProfit ); // 995.657
 
 
 // --------------------------------------------------
